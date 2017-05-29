@@ -4,10 +4,9 @@
   "description": "Getalongwell.co.th with Next.js",
   "main": "index.js",
   "scripts": {
-    "dev": "next",
+    "dev": "node server.js",
     "build": "next build",
-    "start": "next start",
-    "deploy": "next build && rsync -pavz -e 'ssh' --progress ./ root@188.166.242.108:/root/domains/getalongwell.co.th/",
+    "start": "NODE_ENV=production node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -24,7 +23,8 @@
   },
   "homepage": "https://github.com/GetAlongWell/getalongwell#readme",
   "dependencies": {
-    "next": "^2.4.0",
+    "next": "^3.0.0-beta6",
+    "next-routes": "^1.0.27",
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
   }

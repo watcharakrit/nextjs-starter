@@ -1,3 +1,8 @@
+import Header from '../components/Header'
+
 export default () => (
- <div><h1>Welcome, Next Getalongwell.co.th</h1></div>
+ <div>
+  <Header />
+  <h1>Welcome, Next Getalongwell.co.th</h1>
+ </div>
 )
