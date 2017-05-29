@@ -1,0 +1,31 @@
+{
+  "name": "getalongwell",
+  "version": "1.0.0",
+  "description": "Getalongwell.co.th with Next.js",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "deploy": "next build && rsync -pavz -e 'ssh' --progress ./ root@188.166.242.108:/root/domains/getalongwell.co.th/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GetAlongWell/getalongwell.git"
+  },
+  "keywords": [
+    "GetAlongWell"
+  ],
+  "author": "Watcharakrit Phantu (WPH.)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GetAlongWell/getalongwell/issues"
+  },
+  "homepage": "https://github.com/GetAlongWell/getalongwell#readme",
+  "dependencies": {
+    "next": "^2.4.0",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4"
+  }
+}
