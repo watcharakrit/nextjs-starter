@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from '../components/Header'
+import Layout from '../layouts/Main'
 
 export default class extends React.Component {
   static async getInitialProps ({ query, res }) {
@@ -11,9 +11,8 @@ export default class extends React.Component {
   render () {
     const { post } = this.props
 
-    return (<div>
-      <Header />
+    return (<Layout>
       <h1>{post}</h1>
-    </div>)
+    </Layout>)
   }
 }
