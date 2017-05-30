@@ -1,42 +1,45 @@
+const fs = require('fs')
 const trash = require('trash')
 
 module.exports = {
- webpack: (config) => {
-     config.module.rules.push(
-       {
-         test: /\.scss$/,
-         use: [
-           {
-             loader: 'emit-file-loader',
-             options: {
-               name: 'dist/[path][name].[ext]'
-             }
-           },
-           {
-             loader: 'skeleton-loader',
-             options: {
-               procedure: function (content) {
-                 const fileName = `${this._module.userRequest}.json`
-                 const classNames = fs.readFileSync(fileName, "utf8")
+  webpack: (config) => {
+    config.plugins = config.plugins.filter(
+      (plugin) => (plugin.constructor.name !== 'UglifyJsPlugin')
+    )
 
-                 trash(fileName)
+    config.module.rules.push({
+      test: /\.scss$/,
+      use: [
+        {
+          loader: 'emit-file-loader',
+          options: {
+            name: 'dist/[path][name].[ext]'
+          }
+        },
+        {
+          loader: 'skeleton-loader',
+          options: {
+            procedure: function (content) {
+              const fileName = `${this._module.userRequest}.json`
+              const classNames = fs.readFileSync(fileName, "utf8")
 
-                 return ['module.exports = {',
-                   `styles: ${classNames},`,
-                   `stylesheet: \`${content}\``,
-                   '}'
-                 ].join('')
-               },
-               cacheable: false
-             }
-           },
-           'postcss-loader',
-           'sass-loader'
-         ]
-       }
-     )
+              trash(fileName)
 
-     return config
-   }
+              return ['module.exports = {',
+                `styles: ${classNames},`,
+                `stylesheet: \`${content}\``,
+                '}'
+              ].join('')
+            },
+            cacheable: false
+          }
+        },
+        'postcss-loader',
+        'sass-loader'
+      ]
+    })
+
+    return config
+  }
 }
 
