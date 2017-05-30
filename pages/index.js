@@ -1,6 +1,6 @@
-import Layout from '../layouts/Main'
-import Head from 'next/head'
-import {stylesheet, styles} from './index.scss'
+import Layout from '../layouts/Main';
+import Head from 'next/head';
+import {stylesheet, styles} from './index.scss';
 import classNames from 'classnames/bind';
 
 let cx = classNames.bind(styles);
@@ -20,4 +20,4 @@ export default () => (
   </Head>
   <h1 className={fontClass}>Welcome, Next Getalongwell.co.th</h1>
  </Layout>
-)
+);

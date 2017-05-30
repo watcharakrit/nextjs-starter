@@ -1,7 +1,7 @@
-module.exports = ({ file, options, env }) => {
-  return {plugins: {
+module.exports = (ctx) => ({
+  plugins: {
     'postcss-cssnext': true,
     'postcss-modules': {generateScopedName: '[local]-[hash:base64:5]'},
-    'cssnano': env === 'production' ? options.cssnano : false
-  }}
-}
+    'cssnano': ctx.env === 'production' ? true : false
+  }
+})
