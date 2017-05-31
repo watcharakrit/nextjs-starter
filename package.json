@@ -1,7 +1,7 @@
 {
-  "name": "getalongwell",
+  "name": "nextjs-starter",
   "version": "1.0.0",
-  "description": "Getalongwell.co.th with Next.js",
+  "description": "Next.js with SCSS, Redux, Normalize.css. HtmlTouchClass",
   "main": "index.js",
   "scripts": {
     "dev": "node server.js",
@@ -9,19 +9,8 @@
     "start": "NODE_ENV=production node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/GetAlongWell/getalongwell.git"
-  },
-  "keywords": [
-    "GetAlongWell"
-  ],
   "author": "Watcharakrit Phantu (WPH.)",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/GetAlongWell/getalongwell/issues"
-  },
-  "homepage": "https://github.com/GetAlongWell/getalongwell#readme",
+  "license": "MIT",
   "dependencies": {
     "classnames": "^2.2.5",
     "cssnano": "^3.10.0",
