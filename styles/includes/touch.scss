@@ -1,0 +1,43 @@
+// ==============================================================
+// Bases - Buttons
+// --------------------------------------------------------------
+// Setting for Touch Class System.
+// ==============================================================
+
+
+$_tap-heightlight-color-reset: rgba(0, 0, 0, 0);
+
+.touch {
+  a,
+  button,
+  .btn,
+  .button,
+  select {
+    cursor: default;
+    -webkit-tap-highlight-color: $_tap-heightlight-color-reset;
+    user-select: none;
+  }
+
+  label {
+    -webkit-tap-highlight-color: $_tap-heightlight-color-reset;
+    user-select: none;
+    span {cursor: default;}
+  }
+}
+
+.no-touch {
+  a,
+  button,
+  .btn,
+  .button,
+  select {
+    cursor: pointer;
+    user-select: none;
+  }
+
+  label {
+    user-select: none;
+    span {cursor: pointer;}
+  }
+}
+// ============================================================================

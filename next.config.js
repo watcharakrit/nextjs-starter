@@ -30,8 +30,7 @@ module.exports = {
                 `stylesheet: \`${content}\``,
                 '}'
               ].join('')
-            },
-            cacheable: false
+            }
           }
         },
         'postcss-loader',
