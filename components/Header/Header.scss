@@ -8,4 +8,9 @@
   &.active {
     color: red;
   }
+
+  :global(.no-touch) &:hover,
+  :global(.touch) &.touch {
+    color: blue;
+  }
 }
